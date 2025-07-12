@@ -39,7 +39,6 @@ final class InputViewModel: ObservableObject {
     func onStart() {
         subscribeValidation()
         subscribePicker()
-        subscribeGiphyPicker()
     }
 
     func onStop() {
@@ -185,16 +184,6 @@ private extension InputViewModel {
         }
         .store(in: &subscriptions)
     }
-
-    func subscribeGiphyPicker() {
-        $showGiphyPicker
-            .sink { [weak self] value in
-                if !value {
-                  self?.attachments.giphyMedia = nil
-                }
-            }
-            .store(in: &subscriptions)
-    }
   
     func subscribePicker() {
         $showPicker
@@ -229,7 +218,6 @@ private extension InputViewModel {
         let draft = DraftMessage(
             text: self.text,
             medias: attachments.medias,
-            giphyMedia: attachments.giphyMedia,
             recording: attachments.recording,
             replyMessage: attachments.replyMessage,
             createdAt: Date()

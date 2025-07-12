@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ExyteMediaPicker
-import GiphyUISDK
 
 public enum InputViewStyle: Sendable {
     case message
@@ -60,13 +59,11 @@ public enum AvailableInputType: Sendable {
     case text
     case media
     case audio
-    case giphy
 }
 
 public struct InputViewAttachments {
     var medias: [Media] = []
     var recording: Recording?
-    var giphyMedia: GPHMedia?
     var replyMessage: ReplyMessage?
 }
 
@@ -144,9 +141,6 @@ struct InputView: View {
             case .message:
                 if isMediaAvailable() {
                     attachButton
-                }
-                if isGiphyAvailable() {
-                    giphyButton
                 }
             case .signature:
                 if viewModel.mediaPickerMode == .cameraSelection {
@@ -585,10 +579,6 @@ struct InputView: View {
     
     private func isAudioAvailable() -> Bool {
         return availableInputs.contains(AvailableInputType.audio)
-    }
-    
-    private func isGiphyAvailable() -> Bool {
-        return availableInputs.contains(AvailableInputType.giphy)
     }
     
     private func isMediaAvailable() -> Bool {

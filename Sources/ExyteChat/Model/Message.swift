@@ -102,8 +102,6 @@ public struct Message: Identifiable, Hashable, Sendable {
                 }
             }
             
-            let giphyMediaId = draft.giphyMedia?.id
-            
             return Message(
                 id: id,
                 user: user,
@@ -111,7 +109,6 @@ public struct Message: Identifiable, Hashable, Sendable {
                 createdAt: draft.createdAt,
                 text: draft.text,
                 attachments: attachments,
-                giphyMediaId: giphyMediaId,
                 recording: draft.recording,
                 replyMessage: draft.replyMessage
             )
