@@ -49,58 +49,39 @@ extension Date {
         let now = Date()
         let earliest = (now as NSDate).earlierDate(date)
         let latest = (earliest == now) ? date : now
-        let components:DateComponents = (calendar as NSCalendar).components([NSCalendar.Unit.minute , NSCalendar.Unit.hour , NSCalendar.Unit.day , NSCalendar.Unit.weekOfYear , NSCalendar.Unit.month , NSCalendar.Unit.year , NSCalendar.Unit.second], from: earliest, to: latest, options: NSCalendar.Options())
-        
+        let components: DateComponents = (calendar as NSCalendar).components(
+            [.minute, .hour, .day, .weekOfYear, .month, .year, .second],
+            from: earliest,
+            to: latest,
+            options: NSCalendar.Options()
+        )
+
         if components.year! >= 2 {
-            return "\(components.year!) years ago"
+            return "\(components.year!) anos atrás"
         } else if components.year! >= 1 {
-            if numericDates {
-                return "1 year ago"
-            } else {
-                return "Last year"
-            }
+            return numericDates ? "1 ano atrás" : "Ano passado"
         } else if components.month! >= 2 {
-            return "\(components.month!) months ago"
+            return "\(components.month!) meses atrás"
         } else if components.month! >= 1 {
-            if numericDates {
-                return "1 month ago"
-            } else {
-                return "Last month"
-            }
+            return numericDates ? "1 mês atrás" : "Mês passado"
         } else if components.weekOfYear! >= 2 {
-            return "\(components.weekOfYear!) weeks ago"
+            return "\(components.weekOfYear!) semanas atrás"
         } else if components.weekOfYear! >= 1 {
-            if numericDates {
-                return "1 week ago"
-            } else {
-                return "Last week"
-            }
+            return numericDates ? "1 semana atrás" : "Semana passada"
         } else if components.day! >= 2 {
-            return "\(components.day!) days ago"
+            return "\(components.day!) dias atrás"
         } else if components.day! >= 1 {
-            if numericDates {
-                return "1 day ago"
-            } else {
-                return "Yesterday"
-            }
+            return numericDates ? "1 dia atrás" : "Ontem"
         } else if components.hour! >= 2 {
-            return "\(components.hour!) hours ago"
+            return "\(components.hour!) horas atrás"
         } else if components.hour! >= 1 {
-            if numericDates {
-                return "1 hour ago"
-            } else {
-                return "An hour ago"
-            }
+            return numericDates ? "1 hora atrás" : "Há uma hora"
         } else if components.minute! >= 2 {
-            return "\(components.minute!) minutes ago"
+            return "\(components.minute!) minutos atrás"
         } else if components.minute! >= 1 {
-            if numericDates {
-                return "1 minute ago"
-            } else {
-                return "A minute ago"
-            }
+            return numericDates ? "1 minuto atrás" : "Há um minuto"
         } else {
-            return "Just now"
+            return "Agora mesmo"
         }
     }
 }

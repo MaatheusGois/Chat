@@ -53,7 +53,7 @@ struct CommentsExampleView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.blue.opacity(0.2)
+                Color.appPrimary.opacity(0.2)
                 Text("An interesting post for people to comment on")
                     .font(.system(size: 30))
                     .fontWeight(.bold)
@@ -92,7 +92,7 @@ struct CommentsExampleView: View {
                 SwipeAction(action: onDelete, activeFor: { $0.user.isCurrentUser }, background: .red) {
                     swipeActionButtonStandard(title: "Delete", image: "xmark.bin")
                 },
-                SwipeAction(action: onReply, background: .blue) {
+                SwipeAction(action: onReply, background: .appPrimary) {
                     swipeActionButtonStandard(title: "Reply", image: "arrowshape.turn.up.left")
                 },
                 // SwipeActions can also be selectively shown based on the message, here we only show the Edit action when the message is from the current sender
@@ -105,10 +105,10 @@ struct CommentsExampleView: View {
                 SwipeAction(action: onInfo) {
                     Image(systemName: "info.bubble")
                         .imageScale(.large)
-                        .foregroundStyle(.blue.gradient)
+                        .foregroundStyle(.appPrimary.gradient)
                         .frame(height: 30)
                     Text("Info")
-                        .foregroundStyle(.blue.gradient)
+                        .foregroundStyle(.appPrimary.gradient)
                         .font(.footnote)
                 }
             ])

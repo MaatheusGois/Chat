@@ -496,13 +496,13 @@ public struct ChatView<MessageContent: View, InputViewContent: View, MenuAction:
 
     private static func createLocalization() -> ChatLocalization {
         return ChatLocalization(
-            inputPlaceholder: String(localized: "Type a message..."),
-            signatureText: String(localized: "Add signature..."),
-            cancelButtonText: String(localized: "Cancel"),
-            recentToggleText: String(localized: "Recents"),
-            waitingForNetwork: String(localized: "Waiting for network"),
-            recordingText: String(localized: "Recording..."),
-            replyToText: String(localized: "Reply to")
+            inputPlaceholder: String(localized: "Faça uma pergunta…"),
+            signatureText: String(localized: "Adicionar assinatura..."),
+            cancelButtonText: String(localized: "Cancelar"),
+            recentToggleText: String(localized: "Recentes"),
+            waitingForNetwork: String(localized: "Aguardando Conexão"),
+            recordingText: String(localized: "Gravando..."),
+            replyToText: String(localized: "Responder")
         )
     }
 }

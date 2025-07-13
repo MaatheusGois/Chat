@@ -412,7 +412,7 @@ internal struct InteriorRadialShadow: ViewModifier {
                 ),
                 Reaction(
                     user: .init(
-                        id: "123",
+                        id: "124",
                         name: "Tim",
                         avatarURL: nil,
                         isCurrentUser: true

@@ -34,7 +34,7 @@ struct ChatExampleView: View {
         .setRecorderSettings(recorderSettings)
         .messageReactionDelegate(viewModel)
         .swipeActions(edge: .leading, performsFirstActionWithFullSwipe: true, items: [
-            SwipeAction(action: onReply, activeFor: { !$0.user.isCurrentUser }, background: .blue) {
+            SwipeAction(action: onReply, activeFor: { !$0.user.isCurrentUser }, background: .appPrimary) {
                 VStack {
                     Image(systemName: "arrowshape.turn.up.left")
                         .imageScale(.large)

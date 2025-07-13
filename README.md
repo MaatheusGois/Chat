@@ -222,7 +222,7 @@ ChatView(messages: viewModel.messages) { draft in
     },
     // Set the background color of a SwipeAction in the initializer,
     // instead of trying to apply a background color in your ViewBuilder
-    SwipeAction(action: onReply, background: .blue) {
+    SwipeAction(action: onReply, background: .appPrimary) {
         swipeActionButtonStandard(title: "Reply", image: "arrowshape.turn.up.left")
     },
     // SwipeActions can also be selectively shown based on the message,

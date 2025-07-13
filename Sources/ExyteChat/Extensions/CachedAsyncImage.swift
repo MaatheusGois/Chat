@@ -58,7 +58,7 @@ import SwiftUI
 ///         } else if phase.error != nil {
 ///             Color.red // Indicates an error.
 ///         } else {
-///             Color.blue // Acts as a placeholder.
+///             Color.appPrimary // Acts as a placeholder.
 ///         }
 ///     }
 ///
@@ -236,7 +236,7 @@ public struct CachedAsyncImage<Content>: View where Content: View {
     ///         } else if phase.error != nil {
     ///             Color.red // Indicates an error.
     ///         } else {
-    ///             Color.blue // Acts as a placeholder.
+    ///             Color.appPrimary // Acts as a placeholder.
     ///         }
     ///     }
     ///
@@ -276,7 +276,7 @@ public struct CachedAsyncImage<Content>: View where Content: View {
     ///         } else if phase.error != nil {
     ///             Color.red // Indicates an error.
     ///         } else {
-    ///             Color.blue // Acts as a placeholder.
+    ///             Color.appPrimary // Acts as a placeholder.
     ///         }
     ///     }
     ///
